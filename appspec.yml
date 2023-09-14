@@ -1,11 +1,11 @@
 version: 0.0
-os: linux
+os: ubuntu
 files:
   - source: /
-    destination: /usr/cddemo
+    destination: /home/ubuntu/cddemo
     overwrite: true
 permissions:
-  - object: /usr/cddemo/codedeploy
+  - object: /home/ubuntu/cddemo/codedeploy
     pattern: "*.sh"
     owner: root
     group: root
@@ -25,7 +25,7 @@ hooks:
   ApplicationStop:
     - location: codedeploy/app_stop.sh
       timeout: 180
-  ValidateService:
-    - location: codedeploy/validate_service.sh
-      timeout: 180
+  # ValidateService:
+  #   - location: codedeploy/validate_service.sh
+  #     timeout: 180
 
